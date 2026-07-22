@@ -915,11 +915,46 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 /* ============================================================
    PRODUCT CARD PLACEHOLDER GRADIENTS
    ============================================================ */
-.prod-bg-1 { background:linear-gradient(135deg,#5c4a3c 0%,#8a6d5a 100%); }
-.prod-bg-2 { background:linear-gradient(135deg,#4a5c42 0%,#6d8a5e 100%); }
-.prod-bg-3 { background:linear-gradient(135deg,#4a4a5c 0%,#6d6d8a 100%); }
-.prod-bg-4 { background:linear-gradient(135deg,#5c5c42 0%,#8a8a5e 100%); }
-.prod-bg-5 { background:linear-gradient(135deg,#3d4a52 0%,#5e6d7a 100%); }
-.prod-bg-6 { background:linear-gradient(135deg,#52483d 0%,#7a6d5e 100%); }
-.prod-bg-7 { background:linear-gradient(135deg,#4a3d52 0%,#6d5e7a 100%); }
-.prod-bg-8 { background:linear-gradient(135deg,#52403d 0%,#7a5e5e 100%); }
+/* ============================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================ */
+.whatsapp-float {
+  position:fixed;
+  bottom:2rem; right:2rem;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.75rem 1.25rem 0.75rem 1rem;
+  background:#25D366;
+  color:#ffffff;
+  border-radius:50px;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 2px 8px rgba(0,0,0,0.15);
+  text-decoration:none;
+  font-family:var(--font-sans);
+  font-size:0.875rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+  transition:transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s;
+  animation:waPulse 3s infinite;
+}
+.whatsapp-float:hover {
+  background:#20ba5a;
+  transform:scale(1.06) translateY(-2px);
+  box-shadow:0 8px 28px rgba(37,211,102,0.6);
+  color:#ffffff;
+}
+.whatsapp-float svg { flex-shrink:0; fill:currentColor; }
+@keyframes waPulse {
+  0%, 100% { box-shadow:0 4px 20px rgba(37,211,102,0.45); }
+  50% { box-shadow:0 4px 28px rgba(37,211,102,0.75); }
+}
+
+@media (max-width:640px) {
+  .whatsapp-float {
+    bottom:1.5rem; right:1.25rem;
+    padding:0.75rem;
+    border-radius:50%;
+  }
+  .whatsapp-text { display:none; }
+}

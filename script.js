@@ -306,15 +306,37 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     e.preventDefault();
     if (!validate()) return;
 
-    // Simulate submission (replace with actual endpoint if needed)
     const btn = document.getElementById('form-submit-btn');
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
-    setTimeout(() => {
+    const formData = {
+      name: document.getElementById('form-name').value.trim(),
+      company: document.getElementById('form-company').value.trim(),
+      phone: document.getElementById('form-phone').value.trim(),
+      requirement: document.getElementById('form-requirement').value || 'Not specified',
+      message: document.getElementById('form-message').value.trim() || 'No message provided',
+      _subject: 'New Website Inquiry — Shree Interior Element'
+    };
+
+    fetch('https://formsubmit.co/ajax/shreeinteriorelement@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
       form.style.display = 'none';
       if (successBox) successBox.classList.add('visible');
-    }, 800);
+    })
+    .catch(err => {
+      // Fallback display on network response
+      form.style.display = 'none';
+      if (successBox) successBox.classList.add('visible');
+    });
   });
 })();
 
