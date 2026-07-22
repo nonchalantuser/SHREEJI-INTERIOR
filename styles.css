@@ -617,6 +617,51 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 .spec-label { color:var(--clr-text-muted); font-weight:600; letter-spacing:0.04em; flex-shrink:0; }
 .spec-val { color:var(--clr-text); font-weight:500; text-align:right; }
 
+.product-brands {
+  margin-top:0.875rem;
+  padding-top:0.75rem;
+  border-top:1px dashed var(--clr-border);
+}
+.product-brands-label {
+  display:block;
+  font-size:0.5625rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--clr-accent);
+  margin-bottom:0.4rem;
+}
+.brand-chips {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0.4rem;
+  min-height:28px;
+}
+.brand-chip {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0.2rem 0.5rem;
+  background:var(--clr-bg-off);
+  border:1px solid var(--clr-border);
+  border-radius:3px;
+}
+.brand-chip img {
+  max-height:18px;
+  max-width:65px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:0.85;
+  transition:filter 0.3s, opacity 0.3s;
+}
+.brand-chip:hover img {
+  filter:grayscale(0%);
+  opacity:1;
+}
+
 /* ============================================================
    CLIENTS
    ============================================================ */
