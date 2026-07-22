@@ -1123,17 +1123,40 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   margin-bottom:1.25rem; color:var(--clr-accent);
 }
 
+/* Logo styles */
+.logo-img, .hero-brand-logo {
+  height:44px;
+  max-height:44px;
+  width:auto;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
 #footer {
   background:var(--clr-primary-dark);
   border-top:1px solid rgba(255,255,255,0.07);
-  padding:2rem 0;
+  padding:2.5rem 0;
 }
 .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
-.footer-logo .logo-name { color:rgba(255,255,255,0.9); }
-.footer-logo .logo-tagline-small { color:rgba(255,255,255,0.4); }
+.footer-logo {
+  display:inline-flex;
+  align-items:center;
+  gap:0.75rem;
+  text-decoration:none;
+}
+.footer-logo .logo-img {
+  height:48px;
+  max-height:48px;
+  width:auto;
+  object-fit:contain;
+  flex-shrink:0;
+}
+.footer-logo .logo-text { display:flex; flex-direction:column; line-height:1.2; }
+.footer-logo .logo-name { font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:rgba(255,255,255,0.9); }
+.footer-logo .logo-tagline-small { font-size:0.5625rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
 .footer-copy { font-size:0.8125rem; color:rgba(255,255,255,0.45); text-align:center; line-height:1.75; }
 .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
 .footer-links a { font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.45); transition:color 0.2s; }
