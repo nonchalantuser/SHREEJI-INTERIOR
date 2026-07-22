@@ -119,6 +119,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 (function initHeroSlideshow() {
   const slides = document.querySelectorAll('.hero-slide');
   const dots   = document.querySelectorAll('.hero-dot');
+  const counterCurrent = document.querySelector('.hero-counter-current');
   if (!slides.length) return;
 
   let current = 0;
@@ -130,6 +131,9 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     if (dots[current]) dots[current].classList.add('active');
+    if (counterCurrent) {
+      counterCurrent.textContent = String(current + 1).padStart(2, '0');
+    }
   }
 
   function startTimer() {

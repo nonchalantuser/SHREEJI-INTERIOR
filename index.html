@@ -16,39 +16,45 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header id="header" role="banner">
-    <div class="header-inner">
-      <a href="#hero" class="logo-mark" aria-label="Shree Interior Element Home">
-        <img src="images/logo.png" alt="Shree Interior Element Logo" class="logo-img">
-        <div class="logo-text">
-          <span class="logo-name">Shree Interior Element</span>
-          <span class="logo-tagline-small">Premium Interior Solutions</span>
-        </div>
+  <!-- HEADER — transparent overlay on hero -->
+  <header id="header" role="banner" class="hero-header">
+    <div class="hero-header-inner">
+      <!-- Left: hamburger -->
+      <button class="hero-hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <!-- Center: brand wordmark -->
+      <a href="#hero" class="hero-brand" aria-label="Shree Interior Element Home">
+        <span class="hero-brand-deco" aria-hidden="true">&#8212;</span>
+        <span class="hero-brand-name">Shree Interior Element</span>
+        <span class="hero-brand-deco" aria-hidden="true">&#8212;</span>
       </a>
-      <nav class="header-nav" aria-label="Primary navigation">
-        <a href="#hero"         class="nav-link">Home</a>
-        <a href="#products"     class="nav-link">Products</a>
-        <a href="#certificates" class="nav-link">Certificates</a>
-        <a href="#clients"      class="nav-link">Clients</a>
-        <a href="#gallery"      class="nav-link">Gallery</a>
-        <a href="#about"        class="nav-link">About</a>
-        <a href="#contact"      class="nav-link">Contact</a>
-      </nav>
-      <a href="tel:+919320902121" class="header-cta desktop" id="header-phone-cta">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+
+      <!-- Right: phone CTA -->
+      <a href="tel:+919320902121" class="hero-header-phone desktop" id="header-phone-cta" aria-label="Call us">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
         +91 93209 02121
       </a>
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
+
+    <!-- Full nav for desktop (hidden by default, shown on scroll or menu) -->
+    <nav class="hero-desktop-nav" id="hero-desktop-nav" aria-label="Primary navigation">
+      <a href="#hero"         class="nav-link">Home</a>
+      <a href="#products"     class="nav-link">Products</a>
+      <a href="#certificates" class="nav-link">Certificates</a>
+      <a href="#clients"      class="nav-link">Clients</a>
+      <a href="#gallery"      class="nav-link">Gallery</a>
+      <a href="#about"        class="nav-link">About</a>
+      <a href="#contact"      class="nav-link">Contact</a>
+    </nav>
   </header>
 
   <!-- Mobile Nav Drawer -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="#hero"     class="nav-link" id="mnav-home">Home</a>
     <a href="#products" class="nav-link" id="mnav-products">Products</a>
+    <a href="#certificates" class="nav-link" id="mnav-certs">Certificates</a>
     <a href="#clients"  class="nav-link" id="mnav-clients">Clients</a>
     <a href="#gallery"  class="nav-link" id="mnav-gallery">Gallery</a>
     <a href="#about"    class="nav-link" id="mnav-about">About</a>
@@ -61,69 +67,56 @@
 
   <main id="main-content">
 
-    <!-- ══ 1. HOME — HERO + MARQUEE ══ -->
+    <!-- ══ 1. HOME — HERO (EDITORIAL FULL-BLEED) ══ -->
     <section id="hero" aria-label="Hero">
+      <!-- Background slideshow -->
       <div class="hero-slides" aria-hidden="true">
-        <div class="hero-slide active" style="background-image:url('images/photo6.jpg')"></div>
+        <div class="hero-slide active" style="background-image:url('images/photo9.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/photo6.jpg')"></div>
         <div class="hero-slide" style="background-image:url('images/photo7.jpg')"></div>
-        <div class="hero-slide" style="background-image:url('images/photo9.jpg')"></div>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
-      <!-- Arch motif overlay -->
-      <svg class="arch-motif" style="right:-60px;bottom:-40px;width:420px;opacity:0.07;" viewBox="0 0 400 300" fill="none" aria-hidden="true">
-        <path d="M380 280 Q380 20 200 20 Q20 20 20 280" stroke="white" stroke-width="1.5"/>
-        <path d="M350 280 Q350 50 200 50 Q50 50 50 280" stroke="white" stroke-width="1.5"/>
-        <path d="M320 280 Q320 80 200 80 Q80 80 80 280" stroke="white" stroke-width="1.5"/>
-      </svg>
-
-      <div class="hero-content">
-        <div class="hero-eyebrow-wrap">
-          <span class="hero-line" aria-hidden="true"></span>
-          <span class="hero-badge">Bhiwandi, Maharashtra &mdash; Pan-India Supply</span>
-          <span class="hero-line" aria-hidden="true"></span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="hero-title-top">Premium Interior</span>
-          <span class="hero-title-bottom"><em>Product Solutions</em></span>
+      <!-- Bottom-left editorial content -->
+      <div class="hero-bottom-content">
+        <div class="hero-location-tag">Bhiwandi, Maharashtra &nbsp;&#8212;&nbsp; Pan-India Supply</div>
+        <h1 class="hero-editorial-title">
+          Premium material supply<br><em>crafted for every project</em>
         </h1>
-
-        <p class="hero-sub">
-          Trusted Material Partner for Architects, Designers &amp; Turnkey Professionals across India.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="#products" class="btn-primary" id="hero-cta-products">
-            View Products
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#contact" class="btn-glass" id="hero-cta-contact">Contact Us</a>
-        </div>
-
-        <!-- Stats strip -->
-        <div class="hero-stats">
-          <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Years Experience</span></div>
-          <div class="hero-stat-sep" aria-hidden="true"></div>
-          <div class="hero-stat"><span class="hero-stat-num">1000+</span><span class="hero-stat-label">Happy Clients</span></div>
-          <div class="hero-stat-sep" aria-hidden="true"></div>
-          <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Product Categories</span></div>
-          <div class="hero-stat-sep" aria-hidden="true"></div>
-          <div class="hero-stat"><span class="hero-stat-num">Pan</span><span class="hero-stat-label">India Reach</span></div>
-        </div>
+        <a href="#products" class="hero-editorial-cta" id="hero-cta-products">
+          View Products &nbsp;&#8594;
+        </a>
       </div>
 
-      <!-- Slide indicators -->
+      <!-- Right: vertical slide counter -->
+      <div class="hero-slide-counter" aria-hidden="true">
+        <span class="hero-counter-current">01</span>
+        <span class="hero-counter-sep"></span>
+        <span class="hero-counter-total">03</span>
+      </div>
+
+      <!-- Bottom center: dot indicators -->
       <div class="hero-indicators" aria-label="Slide controls">
         <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
         <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
         <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
       </div>
 
-      <!-- Scroll indicator -->
+      <!-- Bottom-right: scroll indicator -->
       <div class="hero-scroll" aria-hidden="true">
         <div class="scroll-line"></div>
         <span class="scroll-label">Scroll</span>
+      </div>
+
+      <!-- Stats strip pinned bottom of hero -->
+      <div class="hero-stats-bar" aria-label="Key stats">
+        <div class="hero-stat-item"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Years Experience</span></div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item"><span class="hero-stat-num">1000+</span><span class="hero-stat-label">Happy Clients</span></div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Product Categories</span></div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item"><span class="hero-stat-num">Pan&#8209;India</span><span class="hero-stat-label">Delivery Reach</span></div>
       </div>
     </section>
 
