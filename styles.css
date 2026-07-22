@@ -642,24 +642,22 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.2rem 0.5rem;
-  background:var(--clr-bg-off);
+  padding:0.25rem 0.6rem;
+  background:var(--clr-white);
   border:1px solid var(--clr-border);
-  border-radius:3px;
+  border-radius:4px;
+  box-shadow:var(--shadow-sm);
 }
 .brand-chip img {
-  max-height:18px;
-  max-width:65px;
+  max-height:22px;
+  max-width:75px;
   width:auto;
   height:auto;
   object-fit:contain;
-  filter:grayscale(100%);
-  opacity:0.85;
-  transition:filter 0.3s, opacity 0.3s;
+  transition:transform 0.25s var(--ease);
 }
 .brand-chip:hover img {
-  filter:grayscale(0%);
-  opacity:1;
+  transform:scale(1.08);
 }
 
 /* ============================================================
