@@ -306,37 +306,35 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     e.preventDefault();
     if (!validate()) return;
 
-    const btn = document.getElementById('form-submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+    const name        = document.getElementById('form-name').value.trim();
+    const company     = document.getElementById('form-company').value.trim();
+    const phone       = document.getElementById('form-phone').value.trim();
+    const requirement = document.getElementById('form-requirement').value || 'Not specified';
+    const message     = document.getElementById('form-message').value.trim() || 'N/A';
 
-    const formData = {
-      name: document.getElementById('form-name').value.trim(),
-      company: document.getElementById('form-company').value.trim(),
-      phone: document.getElementById('form-phone').value.trim(),
-      requirement: document.getElementById('form-requirement').value || 'Not specified',
-      message: document.getElementById('form-message').value.trim() || 'No message provided',
-      _subject: 'New Website Inquiry — Shree Interior Element'
-    };
+    const subject = encodeURIComponent(`Material Inquiry from ${name} (${company})`);
+    const body = encodeURIComponent(
+`Hello Shree Interior Element,
 
-    fetch('https://formsubmit.co/ajax/shreeinteriorelement@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      form.style.display = 'none';
-      if (successBox) successBox.classList.add('visible');
-    })
-    .catch(err => {
-      // Fallback display on network response
-      form.style.display = 'none';
-      if (successBox) successBox.classList.add('visible');
-    });
+I would like to inquire about your interior materials. Here are my details:
+
+• Name: ${name}
+• Company / Firm: ${company}
+• Phone: ${phone}
+• Product Category: ${requirement}
+
+• Project Details / Message:
+${message}
+
+Thank you!`
+    );
+
+    // Open user's email client / Gmail pre-filled
+    window.location.href = `mailto:shreeinteriorelement@gmail.com?subject=${subject}&body=${body}`;
+
+    // Show success message on page
+    form.style.display = 'none';
+    if (successBox) successBox.classList.add('visible');
   });
 })();
 
