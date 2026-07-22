@@ -839,6 +839,91 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 .about-col p { color:var(--clr-text-light); font-size:1rem; line-height:1.85; margin-bottom:1rem; }
 .about-col p:last-of-type { margin-bottom:0; }
 
+/* Leadership Block */
+.leadership-block {
+  margin-top:2.5rem;
+}
+.leadership-label {
+  display:block;
+  font-size:0.6875rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--clr-accent);
+  margin-bottom:0.875rem;
+}
+.leadership-card {
+  display:flex;
+  gap:1.5rem;
+  align-items:center;
+  padding:1.25rem;
+  background:var(--clr-surface);
+  border:1px solid var(--clr-border);
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+  transition:transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+  cursor:pointer;
+}
+.leadership-card:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+  border-color:var(--clr-accent);
+}
+.leader-photo-wrap {
+  position:relative;
+  flex-shrink:0;
+  width:120px;
+  height:135px;
+  border-radius:10px;
+  overflow:hidden;
+  border:2px solid var(--clr-border);
+  box-shadow:0 4px 14px rgba(0,0,0,0.1);
+  cursor:zoom-in;
+}
+.leader-img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform 0.35s var(--ease);
+}
+.leadership-card:hover .leader-img {
+  transform:scale(1.06);
+}
+.leader-zoom-overlay {
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition:opacity 0.25s ease;
+}
+.leader-photo-wrap:hover .leader-zoom-overlay {
+  opacity:1;
+}
+.leader-zoom-icon {
+  font-size:1.2rem;
+  color:#fff;
+  background:rgba(0,0,0,0.5);
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.leader-info { display:flex; flex-direction:column; gap:0.25rem; }
+.leader-name { font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--clr-heading); }
+.leader-title { font-size:0.8125rem; font-weight:600; color:var(--clr-accent); margin-bottom:0.35rem; }
+.leader-bio { font-size:0.875rem; color:var(--clr-text-light); line-height:1.55; margin:0; }
+
+@media (max-width:540px) {
+  .leadership-card { flex-direction:column; text-align:center; }
+  .leader-photo-wrap { width:140px; height:155px; }
+}
+
 .contact-details { display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem; }
 .contact-detail-item { display:flex; align-items:flex-start; gap:1rem; }
 .contact-detail-icon {
