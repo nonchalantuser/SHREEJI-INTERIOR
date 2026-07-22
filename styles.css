@@ -667,6 +667,67 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 }
 
 /* ============================================================
+   CERTIFICATES
+   ============================================================ */
+#certificates {
+  padding: var(--section-pad) 0;
+  background: linear-gradient(180deg, var(--clr-surface) 0%, var(--clr-bg) 100%);
+}
+.certs-header { margin-bottom: 3rem; }
+.certs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.cert-card {
+  position: relative;
+  width: 420px;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  cursor: default;
+  border: 2px solid transparent;
+  background: var(--clr-surface);
+}
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.28);
+  border-color: var(--clr-accent);
+}
+.cert-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--clr-surface);
+  border-top: 2px solid var(--clr-accent);
+}
+.cert-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--clr-heading);
+  letter-spacing: 0.02em;
+}
+.cert-status {
+  font-size: 0.82rem;
+  color: #22a86a;
+  font-weight: 600;
+}
+.cert-validity {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+}
+
+/* ============================================================
    CLIENTS
    ============================================================ */
 #clients { background:var(--clr-bg-off); }
