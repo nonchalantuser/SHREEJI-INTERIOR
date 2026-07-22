@@ -618,46 +618,52 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 .spec-val { color:var(--clr-text); font-weight:500; text-align:right; }
 
 .product-brands {
-  margin-top:0.875rem;
-  padding-top:0.75rem;
+  margin-top:1rem;
+  padding-top:0.875rem;
   border-top:1px dashed var(--clr-border);
 }
 .product-brands-label {
   display:block;
-  font-size:0.5625rem;
+  font-size:0.625rem;
   font-weight:700;
   letter-spacing:0.12em;
   text-transform:uppercase;
   color:var(--clr-accent);
-  margin-bottom:0.4rem;
+  margin-bottom:0.5rem;
 }
 .brand-chips {
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:0.4rem;
-  min-height:28px;
+  gap:0.6rem;
+  min-height:36px;
 }
 .brand-chip {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0.25rem 0.6rem;
+  padding:0.4rem 0.8rem;
   background:var(--clr-white);
   border:1px solid var(--clr-border);
-  border-radius:4px;
+  border-radius:6px;
   box-shadow:var(--shadow-sm);
+  transition:transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s;
+}
+.brand-chip:hover {
+  border-color:var(--clr-accent);
+  box-shadow:var(--shadow-md);
+  transform:translateY(-2px);
 }
 .brand-chip img {
-  max-height:22px;
-  max-width:75px;
+  max-height:38px;
+  max-width:105px;
   width:auto;
   height:auto;
   object-fit:contain;
   transition:transform 0.25s var(--ease);
 }
 .brand-chip:hover img {
-  transform:scale(1.08);
+  transform:scale(1.05);
 }
 
 /* ============================================================
