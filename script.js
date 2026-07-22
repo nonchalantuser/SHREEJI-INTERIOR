@@ -402,3 +402,60 @@ Thank you!`
   window.addEventListener('scroll', debounce(onScroll, 50), { passive: true });
   onScroll();
 })();
+
+
+/* ══════════════════════════════════════════════
+   10. LIGHTBOX IMAGE ZOOM MODAL
+══════════════════════════════════════════════ */
+(function initLightboxModal() {
+  const modal    = document.getElementById('lightbox-modal');
+  const backdrop = document.getElementById('lightbox-backdrop');
+  const closeBtn = document.getElementById('lightbox-close');
+  const imgEl    = document.getElementById('lightbox-img');
+  const caption  = document.getElementById('lightbox-caption');
+  if (!modal || !imgEl) return;
+
+  function openLightbox(src, altText, captionText) {
+    imgEl.src = src;
+    imgEl.alt = altText || 'Expanded View';
+    caption.textContent = captionText || altText || '';
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!modal.classList.contains('active')) {
+        imgEl.src = '';
+      }
+    }, 300);
+  }
+
+  // Attach click listener to all elements marked with data-zoomable="true" or cert cards
+  document.addEventListener('click', (e) => {
+    const zoomTarget = e.target.closest('[data-zoomable="true"], .cert-card, .cert-img-wrapper');
+    if (zoomTarget) {
+      const img = zoomTarget.querySelector('img') || (zoomTarget.tagName === 'IMG' ? zoomTarget : null);
+      if (img && img.src) {
+        const altText = img.alt || '';
+        const capText = zoomTarget.dataset.caption ||
+                        (zoomTarget.querySelector('.gallery-label') ? zoomTarget.querySelector('.gallery-label').textContent : altText);
+        openLightbox(img.src, altText, capText);
+      }
+    }
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+  if (imgEl) imgEl.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+})();
