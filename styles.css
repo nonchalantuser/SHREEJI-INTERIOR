@@ -957,7 +957,14 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 }
 .about-stats .stat-item { text-align: center; }
 .about-stats .stat-num { display: block; font-family: var(--font-serif); font-size: 2rem; font-weight: 600; color: var(--clr-heading); line-height: 1; }
-.about-stats .stat-label { display: block; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clr-text-muted); margin-top: 0.35rem; }
+/* ============================================================
+   ABOUT US / LEADERSHIP SECTION
+   ============================================================ */
+#about {
+  padding: 5.5rem 0;
+  background: var(--clr-bg-off);
+  border-top: 1px solid var(--clr-border);
+}
 
 /* Leadership Block */
 .leadership-block {
