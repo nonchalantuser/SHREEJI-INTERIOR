@@ -1040,22 +1040,25 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 /* ============================================================
    CONTACT US
    ============================================================ */
-#contact {
+#about {
   padding: var(--section-pad) 0;
-  background: var(--clr-bg);
+  background: var(--clr-bg-off);
 }
-.contact-grid {
+#contact { background: transparent; }
+
+.about-contact-wrap {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: start;
-  max-width: 1050px;
-  margin: 0 auto;
 }
+.about-col p { color: var(--clr-text-light); font-size: 1rem; line-height: 1.85; margin-bottom: 1rem; }
+.about-col p:last-of-type { margin-bottom: 0; }
+
 @media (max-width: 900px) {
-  .contact-grid {
+  .about-contact-wrap {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 }
 
