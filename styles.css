@@ -987,6 +987,7 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s;
+  cursor: pointer;
 }
 .leadership-card:hover {
   transform: translateY(-4px);
@@ -1002,6 +1003,7 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   overflow: hidden;
   border: 2px solid var(--clr-border);
   box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  cursor: zoom-in;
 }
 .leader-monogram {
   display: flex;
