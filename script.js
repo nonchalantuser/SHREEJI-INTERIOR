@@ -374,7 +374,7 @@ Thank you!`
    9. ACTIVE NAV HIGHLIGHT — on scroll
 ══════════════════════════════════════════════ */
 (function initActiveNav() {
-  const sections = ['hero', 'products', 'certificates', 'clients', 'testimonials', 'about', 'contact'];
+  const sections = ['hero', 'products', 'certificates', 'about', 'clients', 'testimonials', 'contact'];
   const navLinks = document.querySelectorAll('.header-nav .nav-link');
   if (!navLinks.length) return;
 
