@@ -653,15 +653,15 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 .brand-chips {
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:0.5rem;
+  gap:0.6rem;
 }
 .brand-chip {
   display:inline-flex;
   align-items:center;
   justify-content:center;
   width:100%;
-  height:46px;
-  padding:0.3rem 0.5rem;
+  height:54px;
+  padding:0.25rem 0.5rem;
   box-sizing:border-box;
   background:var(--clr-white);
   border:1px solid var(--clr-border);
@@ -675,8 +675,8 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   transform:translateY(-2px);
 }
 .brand-chip img {
-  max-height:36px;
-  max-width:92%;
+  max-height:44px;
+  max-width:96%;
   width:100%;
   height:100%;
   object-fit:contain;
