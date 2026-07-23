@@ -955,18 +955,18 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 }
 .client-ref-card {
   display:flex; align-items:center; justify-content:center;
-  padding:2rem 1.5rem;
+  padding:1.5rem 1rem;
   border-right:1px solid var(--clr-border);
   border-bottom:1px solid var(--clr-border);
   background:var(--clr-white);
-  min-height:155px;
+  min-height:140px;
   transition:background var(--dur) var(--ease);
 }
 .client-ref-card:hover { background:var(--clr-bg-off); }
 .client-ref-card:nth-child(5n) { border-right:none; }
 .client-ref-grid > .client-ref-card:nth-last-child(-n+5) { border-bottom:none; }
 .client-ref-img {
-  max-height:90px; max-width:180px; width:auto; height:auto; object-fit:contain;
+  max-height:72px; max-width:155px; width:auto; height:auto; object-fit:contain;
   transition:transform 0.3s var(--ease);
 }
 .client-ref-card:hover .client-ref-img { transform:scale(1.05); }
