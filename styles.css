@@ -1088,42 +1088,20 @@ section:nth-child(even) { background:var(--clr-bg-off); }
   }
 }
 
-.contact-quick-bar {
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow-sm);
+.contact-details { display:flex; flex-direction:column; gap:1.15rem; margin-bottom:2rem; }
+.contact-detail-item { display:flex; align-items:flex-start; gap:1rem; }
+.contact-detail-icon {
+  flex-shrink:0; width:40px; height:40px; border-radius:50%;
+  background:rgba(184,148,90,0.1);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--clr-accent); margin-top:0.1rem;
 }
-.quick-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1;
-}
-.quick-icon-box {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(184,148,90,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--clr-accent);
-  flex-shrink: 0;
-}
-.quick-text { display: flex; flex-direction: column; gap: 0.1rem; }
-.quick-label { font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--clr-text-muted); }
-.quick-val { font-size: 0.8125rem; font-weight: 600; color: var(--clr-heading); }
-.quick-val a { color: var(--clr-heading); }
-.quick-val a:hover { color: var(--clr-accent); }
-
-@media (max-width: 540px) {
-  .contact-quick-bar { flex-direction: column; gap: 0.75rem; }
-}
+.contact-detail-icon svg { width:18px; height:18px; fill:none; stroke:currentColor; }
+.contact-detail-content { display:flex; flex-direction:column; gap:0.2rem; }
+.contact-detail-label { font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--clr-text-muted); }
+.contact-detail-value { font-size:0.9375rem; color:var(--clr-text); line-height:1.55; }
+.contact-detail-value a { color:var(--clr-accent); }
+.contact-detail-value a:hover { text-decoration:underline; }
 
 /* Form */
 .inquiry-form {
