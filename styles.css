@@ -690,8 +690,8 @@ section:nth-child(even) { background:var(--clr-bg-off); }
    CERTIFICATES
    ============================================================ */
 #certificates {
-  padding: var(--section-pad) 0;
-  background: linear-gradient(180deg, var(--clr-surface) 0%, var(--clr-bg) 100%);
+  padding: 5rem 0 6rem;
+  background: linear-gradient(180deg, var(--clr-bg-off) 0%, var(--clr-bg) 100%);
 }
 .certs-header { margin-bottom: 3rem; }
 .certs-grid {
@@ -961,9 +961,10 @@ section:nth-child(even) { background:var(--clr-bg-off); }
    ABOUT US / LEADERSHIP SECTION
    ============================================================ */
 #about {
-  padding: 5.5rem 0;
-  background: var(--clr-bg-off);
-  border-top: 1px solid var(--clr-border);
+  padding: 6rem 0;
+  background: var(--clr-bg);
+  border-top: 4px solid var(--clr-accent);
+  margin-top: 2rem;
 }
 
 /* Leadership Block */
