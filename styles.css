@@ -694,7 +694,7 @@ section:nth-child(even) { background:var(--clr-bg-off); }
 }
 .cert-card {
   position: relative;
-  width: 420px;
+  width: 370px;
   max-width: 100%;
   border-radius: 16px;
   overflow: hidden;
